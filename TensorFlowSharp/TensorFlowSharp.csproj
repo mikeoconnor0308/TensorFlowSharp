@@ -8,7 +8,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>TensorFlowSharp</RootNamespace>
     <AssemblyName>TensorFlowSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <ReleaseVersion>0.2</ReleaseVersion>
     <PackageId>TensorFlowSharp</PackageId>
     <PackageVersion>1.3.0-pre1</PackageVersion>
@@ -20,6 +19,7 @@
     <Owners>Miguel de Icaza</Owners>
     <Summary>.NET API for TensorFlow, Google's Machine Intelligence framework</Summary>
     <PackageReleaseNotes>Adds support for TensorFlor 1.3 - preview release</PackageReleaseNotes>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
     <_NativeFiles Include="..\native\*.*">
@@ -59,8 +59,14 @@
     <Reference Include="System" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.ValueTuple">
-      <HintPath>..\packages\System.ValueTuple.4.3.1\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.Caching" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tensorflow.cs" />
@@ -78,6 +84,9 @@
     <PackageReference Include="System.ValueTuple">
       <Version>4.3.1</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
